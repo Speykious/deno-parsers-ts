@@ -1,5 +1,5 @@
-import { Parser } from './Parser';
-import { colors } from './colors';
+import { Parser } from './Parser.ts';
+import { red, green } from 'https://raw.githubusercontent.com/Speykious/deno-pretty-logs/master/colors.ts';
 
 /** Creates a parser that matches a string.
  * @param s The string to match when parsing. */
@@ -22,10 +22,10 @@ export const str = (s: string) =>
 /** Creates a parser that matches a regex.
  * @param r The regex to match when parsing. */
 export const reg = (r: RegExp) => {
-	const crx = `${colors.FgRed}/${r.source}/${r.flags}${colors.Reset}`;
+	const crx = red.c(`/${r.source}/${r.flags}`);
 	if (r.source[0] !== '^')
 		throw new Error(
-			`The regex provided (${crx}) doesn't begin with ${colors.FgGreen}'^'${colors.Reset}.`
+			`The regex provided (${crx}) doesn't begin with ${green.c('^')}.`
 		);
 
 	return Parser.newStandard(r,
