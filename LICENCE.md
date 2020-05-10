@@ -1,4 +1,5 @@
-Pretty Logs (Deno): Trying deno by developing a pretty log with colors in the terminal. 
+Parsers-TS: a functional implementation of basic parsers in typescript.
+Forked from the **Parser Combinators from Scratch** YouTube series from the channel *Low Level JavaScript*.
 Copyright (C)	2020	Speykious
 
 This program is free software: you can redistribute it and/or modify
